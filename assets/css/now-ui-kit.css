@@ -8843,9 +8843,9 @@ img {
   max-height: 440px;
 }
 
-.page-header:before {
+/* .page-header:before {
   background-color: rgba(0, 0, 0, 0.3);
-}
+} */
 
 .page-header>.container {
   z-index: 2;
