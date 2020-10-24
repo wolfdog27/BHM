@@ -54,8 +54,20 @@ const API = {
     // Deletes a user's profile. I doubt this will even get used.
     removeStudent: (itemId, userId) => axios.delete(`${baseURL}/api/classes/removeStudent/${itemId}/${userId}`),
 
-        // SHOPPING METHODS
+    // SHOPPING METHODS
     // ======================================================
+    // Gets a single cart's info.
+    getCart: (id) => axios.get(`${baseURL}/${id}`),
+
+    // Adds an item to a user's cart. Expects an object with two keys. cartId, and itemId.
+    addToCart: (cartData) => axios.post(`${baseURL}/shop/add`, cartData),
+
+    // Checkout. Expects a cartId.
+    checkout: (cartId) => axios.post(`${baseURL}/shop/create-checkout-session/${cartId}`),
+
+    // Removes an item from a user's cart. Expects two items. cartId and itemId.
+    removeFromCart: (cartId, itemId) => axios.delete(`${baseURL}/shop/delete/${cartId}/${itemId}`),
+
 }
 
 
